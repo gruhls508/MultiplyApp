@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *firstNumber;
+@property (weak, nonatomic) IBOutlet UITextField *secondNumber;
+@property (weak, nonatomic) IBOutlet UILabel *multiplicationSign;
+@property (weak, nonatomic) IBOutlet UILabel *resultsDisplay;
+@property (weak, nonatomic) IBOutlet UIButton *multiplyButton;
 
 @end
 
@@ -17,13 +23,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	self.firstNumber.keyboardType = UIKeyboardTypeNumberPad;
+    self.secondNumber.keyboardType = UIKeyboardTypeNumberPad;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)onMultiplyButtonPressed:(id)sender {
+    //    NSString *theAnswer = [[NSString alloc] init];
+    self.resultsDisplay.text = [NSString stringWithFormat: @"%i",
+                                [self multiply]];
+
+    [self.firstNumber resignFirstResponder];
+    [self.secondNumber resignFirstResponder];
+
+    if ([self multiply] < 0) {
+
+        self.resultsDisplay.textColor = [UIColor redColor];
+
+    } else if([self multiply] >= 0){
+
+        self.resultsDisplay.textColor = [UIColor greenColor];
+    }
+
+
+    if (([self multiply] % 3) == 0 && ([self multiply] % 5) != 0) {
+
+        self.resultsDisplay.text = @"fizz";
+
+    } else if (([self multiply] % 5) == 0 && ([self multiply] % 3) != 0) {
+
+        self.resultsDisplay.text = @"buzz";
+
+    } else if ((([self multiply] % 3) == 0) && (([self multiply] % 5) == 0)) {
+
+        self.resultsDisplay.text = @"fizzbuzz";
+    }
 }
+
+
+- (int)multiply {
+    return (self.firstNumber.text.intValue * self.secondNumber.text.intValue);
+}
+
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#pragma initial setup
+
 @interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNumber;
@@ -15,18 +17,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *multiplicationSign;
 @property (weak, nonatomic) IBOutlet UILabel *resultsDisplay;
 @property (weak, nonatomic) IBOutlet UIButton *multiplyButton;
+@property (weak, nonatomic) IBOutlet UISlider *multiplierSlider;
 
 @end
 
+
 @implementation ViewController
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.firstNumber.keyboardType = UIKeyboardTypeNumberPad;
-//    self.resultsDisplay.hidden = YES;
+    self.resultsDisplay.hidden = YES;
 }
 
+
+
+#pragma methods
 
 - (IBAction)onMultiplyButtonPressed:(id)sender {
 
@@ -45,21 +53,21 @@
 
     self.resultsDisplay.text = ([self multiply] % 3 == 0 && [self multiply] % 5 != 0) ?
 
-                                                                        @"fizz" :
+                                                                              @"fizz" :
 
-                          ([self multiply] % 3 != 0 && [self multiply] % 5 == 0) ?
+                               ([self multiply] % 3 != 0 && [self multiply] % 5 == 0) ?
 
-                                                                        @"buzz" :
+                                                                              @"buzz" :
 
-                            ([self multiply] % 3 == 0 && [self multiply] % 5 == 0) ?
+                               ([self multiply] % 3 == 0 && [self multiply] % 5 == 0) ?
 
-                                                                        @"fizzbuzz":
+                                                                           @"fizzbuzz":
 
-                                        [NSString stringWithFormat: @"%i",[self multiply]];
+                                    [NSString stringWithFormat: @"%i",[self multiply]];
 
 
 
-//    self.resultsDisplay.hidden = (self.resultsDisplay.hidden) ? NO : NO ;
+    self.resultsDisplay.hidden = (self.resultsDisplay.hidden) ? NO : NO ;
 }
 
 
@@ -67,5 +75,10 @@
     return (self.firstNumber.text.intValue * self.myMultiplier.text.intValue);
 }
 
+- (IBAction)onSliderChanged:(UISlider *)slider{
+
+    int i = slider.value;
+    self.myMultiplier.text = [NSString stringWithFormat:@"%i", i];
+}
 
 @end

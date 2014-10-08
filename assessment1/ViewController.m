@@ -11,7 +11,7 @@
 @interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNumber;
-@property (weak, nonatomic) IBOutlet UITextField *secondNumber;
+@property (weak, nonatomic) IBOutlet UILabel *myMultiplier;
 @property (weak, nonatomic) IBOutlet UILabel *multiplicationSign;
 @property (weak, nonatomic) IBOutlet UILabel *resultsDisplay;
 @property (weak, nonatomic) IBOutlet UIButton *multiplyButton;
@@ -24,17 +24,14 @@
 {
     [super viewDidLoad];
 	self.firstNumber.keyboardType = UIKeyboardTypeNumberPad;
-    self.secondNumber.keyboardType = UIKeyboardTypeNumberPad;
+//    self.resultsDisplay.hidden = YES;
 }
 
 
 - (IBAction)onMultiplyButtonPressed:(id)sender {
-    //    NSString *theAnswer = [[NSString alloc] init];
-    self.resultsDisplay.text = [NSString stringWithFormat: @"%i",
-                                [self multiply]];
 
     [self.firstNumber resignFirstResponder];
-    [self.secondNumber resignFirstResponder];
+    [self.myMultiplier resignFirstResponder];
 
     if ([self multiply] < 0) {
 
@@ -46,23 +43,28 @@
     }
 
 
-    if (([self multiply] % 3) == 0 && ([self multiply] % 5) != 0) {
+    self.resultsDisplay.text = ([self multiply] % 3 == 0 && [self multiply] % 5 != 0) ?
 
-        self.resultsDisplay.text = @"fizz";
+                                                                        @"fizz" :
 
-    } else if (([self multiply] % 5) == 0 && ([self multiply] % 3) != 0) {
+                          ([self multiply] % 3 != 0 && [self multiply] % 5 == 0) ?
 
-        self.resultsDisplay.text = @"buzz";
+                                                                        @"buzz" :
 
-    } else if ((([self multiply] % 3) == 0) && (([self multiply] % 5) == 0)) {
+                            ([self multiply] % 3 == 0 && [self multiply] % 5 == 0) ?
 
-        self.resultsDisplay.text = @"fizzbuzz";
-    }
+                                                                        @"fizzbuzz":
+
+                                        [NSString stringWithFormat: @"%i",[self multiply]];
+
+
+
+//    self.resultsDisplay.hidden = (self.resultsDisplay.hidden) ? NO : NO ;
 }
 
 
 - (int)multiply {
-    return (self.firstNumber.text.intValue * self.secondNumber.text.intValue);
+    return (self.firstNumber.text.intValue * self.myMultiplier.text.intValue);
 }
 
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "51AD1B5F19818C0F0009D6E3"
-               BuildableName = "assessment1.app"
-               BlueprintName = "assessment1"
-               ReferencedContainer = "container:assessment1.xcodeproj">
+               BuildableName = "MultiplyApp.app"
+               BlueprintName = "MultiplyApp"
+               ReferencedContainer = "container:MultiplyApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "51AD1B8019818C100009D6E3"
-               BuildableName = "assessment1Tests.xctest"
-               BlueprintName = "assessment1Tests"
-               ReferencedContainer = "container:assessment1.xcodeproj">
+               BuildableName = "MultiplyAppTests.xctest"
+               BlueprintName = "MultiplyAppTests"
+               ReferencedContainer = "container:MultiplyApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51AD1B5F19818C0F0009D6E3"
-            BuildableName = "assessment1.app"
-            BlueprintName = "assessment1"
-            ReferencedContainer = "container:assessment1.xcodeproj">
+            BuildableName = "MultiplyApp.app"
+            BlueprintName = "MultiplyApp"
+            ReferencedContainer = "container:MultiplyApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51AD1B5F19818C0F0009D6E3"
-            BuildableName = "assessment1.app"
-            BlueprintName = "assessment1"
-            ReferencedContainer = "container:assessment1.xcodeproj">
+            BuildableName = "MultiplyApp.app"
+            BlueprintName = "MultiplyApp"
+            ReferencedContainer = "container:MultiplyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51AD1B5F19818C0F0009D6E3"
-            BuildableName = "assessment1.app"
-            BlueprintName = "assessment1"
-            ReferencedContainer = "container:assessment1.xcodeproj">
+            BuildableName = "MultiplyApp.app"
+            BlueprintName = "MultiplyApp"
+            ReferencedContainer = "container:MultiplyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

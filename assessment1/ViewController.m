@@ -14,10 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNumber;
 @property (weak, nonatomic) IBOutlet UILabel *myMultiplier;
-@property (weak, nonatomic) IBOutlet UILabel *multiplicationSign;
 @property (weak, nonatomic) IBOutlet UILabel *resultsDisplay;
 @property (weak, nonatomic) IBOutlet UIButton *multiplyButton;
-@property (weak, nonatomic) IBOutlet UISlider *multiplierSlider;
 
 @end
 
@@ -41,15 +39,6 @@
     [self.firstNumber resignFirstResponder];
     [self.myMultiplier resignFirstResponder];
 
-    if ([self multiply] < 0) {
-
-        self.resultsDisplay.textColor = [UIColor redColor];
-
-    } else if([self multiply] >= 0){
-
-        self.resultsDisplay.textColor = [UIColor greenColor];
-    }
-
 
     self.resultsDisplay.text = ([self multiply] % 3 == 0 && [self multiply] % 5 != 0) ?
 
@@ -66,6 +55,7 @@
                                     [NSString stringWithFormat: @"%i",[self multiply]];
 
 
+    self.view.backgroundColor = ([self multiply] > 20) ? [UIColor greenColor]: [UIColor whiteColor];
 
     self.resultsDisplay.hidden = (self.resultsDisplay.hidden) ? NO : NO ;
 }

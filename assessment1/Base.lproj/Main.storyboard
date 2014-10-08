@@ -59,8 +59,6 @@
                     </view>
                     <connections>
                         <outlet property="firstNumber" destination="rN4-X9-hOJ" id="9eJ-Qb-RCt"/>
-                        <outlet property="multiplicationSign" destination="RmX-Uu-1Rg" id="i8z-DK-ETH"/>
-                        <outlet property="multiplierSlider" destination="az5-UH-T1b" id="HLr-Pm-69v"/>
                         <outlet property="multiplyButton" destination="uG0-xg-o9W" id="e6i-o2-pfj"/>
                         <outlet property="myMultiplier" destination="3zf-tP-wsr" id="3CA-B0-VUJ"/>
                         <outlet property="resultsDisplay" destination="uDc-Ap-PDd" id="mGU-na-7Gb"/>
